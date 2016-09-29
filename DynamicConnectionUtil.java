@@ -9,13 +9,13 @@ import java.util.Map;
 
 public class DynamicConnectionUtil {
 
-    public void getConnection(DR_Connection connection) {
+    public void getConnection() {
         Map properties = new HashMap<>();
-        properties.put("hibernate.connection.driver_class", connection.getDriverClass());
-        properties.put("hibernate.connection.url", connection.getUrl());
-        properties.put("hibernate.connection.username", connection.getUsername());
-        properties.put("hibernate.connection.password", connection.getPassword());
-        properties.put("hibernate.dialect", connection.getDialect());
+        properties.put("hibernate.connection.driver_class", "org.postgresql.Driver");
+        properties.put("hibernate.connection.url", "jdbc:postgresql://localhost:5432/DynamicDB");
+        properties.put("hibernate.connection.username", "postgres");
+        properties.put("hibernate.connection.password", "postgres");
+        properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQL9Dialect");
         properties.put("hibernate.show-sql", "true");
         properties.put("connection.provider_class", "org.hibernate.connection.C3P0ConnectionProvider");
         properties.put("hibernate.c3p0.acquire_increment", "1");
